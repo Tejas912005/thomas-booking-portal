@@ -1,0 +1,45 @@
+.skeleton-line {
+  background: linear-gradient(
+    90deg,
+    var(--color-sand-light) 0%,
+    var(--color-sand) 50%,
+    var(--color-sand-light) 100%
+  );
+  background-size: 200% 100%;
+  border-radius: var(--radius-xs);
+  animation: skeleton-shimmer 1.8s ease-in-out infinite;
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton-hotel-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--color-border);
+}
+
+.skeleton-hotel-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: var(--space-6) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.skeleton-hotel-left {
+  flex: 1;
+}
+
+.skeleton-hotel-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+

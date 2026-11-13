@@ -1,0 +1,158 @@
+.booking-page-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-6) var(--space-20);
+}
+
+.booking-nav {
+  margin-bottom: var(--space-6);
+}
+
+.booking-header {
+  margin-bottom: var(--space-8);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-6);
+}
+
+.booking-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  font-weight: 600;
+  display: block;
+  margin-bottom: var(--space-1);
+}
+
+.booking-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.25rem);
+  line-height: 1.1;
+}
+
+.booking-error-banner {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background-color: var(--color-error-bg);
+  border: 1px solid var(--color-error);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-8);
+}
+
+.error-icon {
+  font-size: 20px;
+}
+
+.error-title {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-error);
+}
+
+.error-msg {
+  font-size: var(--text-sm);
+  color: var(--color-ink);
+  margin-top: 2px;
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: 1fr 440px;
+  gap: var(--space-12);
+  align-items: start;
+}
+
+/* Left Form Column */
+.editorial-booking-form {
+  background-color: var(--color-paper-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-8);
+}
+
+.form-section-header {
+  margin-bottom: var(--space-6);
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding-bottom: var(--space-4);
+}
+
+.form-step-num {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.form-step-title {
+  font-size: var(--text-2xl);
+  margin: var(--space-1) 0 var(--space-2);
+}
+
+.form-step-desc {
+  font-size: var(--text-sm);
+  color: var(--color-ink-muted);
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  margin-bottom: var(--space-8);
+}
+
+.booking-commit-box {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  border-top: 1px solid var(--color-border-subtle);
+  padding-top: var(--space-6);
+}
+
+.commit-btn {
+  width: 100%;
+}
+
+.commit-terms {
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--color-ink-light);
+  text-align: center;
+}
+
+/* Right Summary Column */
+.summary-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.summary-label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--color-ink-light);
+}
+
+.policy-note {
+  background-color: var(--color-paper);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-4);
+}
+
+.policy-title {
+  font-size: var(--text-base);
+  margin-bottom: var(--space-1);
+}
+
+.policy-text {
+  font-size: var(--text-xs);
+  color: var(--color-ink-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .booking-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+}
+

@@ -1,0 +1,134 @@
+.confirmation-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6) var(--space-20);
+}
+
+.confirmation-header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.conf-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 4px 12px;
+  background-color: var(--color-success-bg);
+  border: 1px solid var(--color-success);
+  border-radius: var(--radius-xs);
+  color: var(--color-success);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-3);
+}
+
+.conf-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: var(--space-2);
+}
+
+.conf-subtitle {
+  font-size: var(--text-base);
+  color: var(--color-ink-muted);
+  max-width: 600px;
+  margin: 0 auto var(--space-5);
+  line-height: 1.5;
+}
+
+/* ── Real Communication Dispatch Toolbar ── */
+.conf-dispatch-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: var(--space-4);
+}
+
+.dispatch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: 20px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: #FFFFFF;
+  border-color: #20BA5A;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+}
+
+.btn-whatsapp:hover {
+  background-color: #1EBE5D;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35);
+}
+
+.btn-gmail {
+  background-color: #EA4335;
+  color: #FFFFFF;
+  border-color: #D33828;
+  box-shadow: 0 4px 12px rgba(234, 67, 53, 0.25);
+}
+
+.btn-gmail:hover {
+  background-color: #D33828;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(234, 67, 53, 0.35);
+}
+
+.btn-calendar {
+  background-color: var(--color-paper-card);
+  color: var(--color-ink);
+  border-color: var(--color-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.btn-calendar:hover {
+  background-color: var(--color-sand-light);
+  border-color: var(--color-ink);
+  transform: translateY(-2px);
+}
+
+.confirmation-pass-wrapper {
+  margin-bottom: var(--space-10);
+}
+
+.confirmation-footer {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-6);
+  text-align: center;
+}
+
+.conf-links-group {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.conf-action-link {
+  font-size: var(--text-sm);
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color var(--transition-fast);
+}
+
+.conf-action-link:hover {
+  color: var(--color-accent);
+}

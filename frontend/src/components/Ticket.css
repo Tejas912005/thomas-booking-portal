@@ -1,0 +1,587 @@
+/* ============================================================
+   Editorial Boarding Pass Design System
+   ============================================================ */
+
+.ticket-pass {
+  background-color: var(--color-paper-card);
+  border: 1.5px solid var(--color-border-dark, var(--color-ink));
+  border-radius: var(--radius-sm);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+  color: var(--color-ink);
+  transition: box-shadow var(--transition-normal);
+}
+
+/* Full Boarding Pass (Confirmation & Manage Page) */
+.ticket-boarding-pass {
+  max-width: 860px;
+  margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(22, 19, 15, 0.08);
+  animation: ticket-entrance 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes ticket-entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Top Header Strip ── */
+.ticket-header-strip {
+  padding: var(--space-3) var(--space-5);
+  background-color: var(--color-sand-light);
+  border-bottom: 1.5px solid var(--color-border-dark, var(--color-ink));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.ticket-brand-cluster {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.ticket-edition-mono {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+}
+
+.ticket-brand-title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.ticket-brand-slug {
+  font-size: 8.5px;
+  letter-spacing: 0.12em;
+  color: var(--color-ink-light);
+}
+
+.ticket-status-cluster {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.ticket-status-pill {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+  background-color: var(--color-sand);
+  color: var(--color-ink);
+}
+
+.ticket-status-pill.confirmed {
+  background-color: var(--color-success-bg);
+  color: var(--color-success);
+  border: 1px solid var(--color-success);
+}
+
+.ticket-status-pill.cancelled {
+  background-color: var(--color-error-bg);
+  color: var(--color-error);
+  border: 1px solid var(--color-error);
+}
+
+.ticket-ref-display {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.ref-caption {
+  font-size: 8.5px;
+  letter-spacing: 0.12em;
+  color: var(--color-ink-light);
+}
+
+.ref-code {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+/* ── Pass Layout Grid: Main Pass (left) + Perforation + Tear-off Stub (right) ── */
+.ticket-inner-grid {
+  display: grid;
+  grid-template-columns: 1fr 28px 290px;
+  background-color: var(--color-paper-card);
+}
+
+/* Sidebar variant uses stacked single column */
+.ticket-sidebar .ticket-inner-grid {
+  grid-template-columns: 1fr;
+}
+
+/* ── Main Section ── */
+.ticket-main-section {
+  padding: var(--space-5) var(--space-5) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.ticket-grid-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.cell-label {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color-ink-light);
+  display: block;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+}
+
+.passenger-name {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--color-ink);
+  margin-bottom: 2px;
+}
+
+.passenger-email {
+  font-size: var(--text-xs);
+  color: var(--color-ink-muted);
+}
+
+.destination-name {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--color-ink);
+  margin-bottom: 2px;
+}
+
+.destination-city {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+}
+
+/* Itinerary Box */
+.ticket-itinerary-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-paper);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xs);
+}
+
+.itin-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.itin-date {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--color-ink);
+}
+
+.itin-time {
+  font-size: 9.5px;
+  color: var(--color-ink-light);
+  margin-top: 2px;
+}
+
+.itin-duration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.itin-nights-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 3px 8px;
+  background-color: var(--color-sand);
+  color: var(--color-ink);
+  border-radius: var(--radius-xs);
+  letter-spacing: 0.05em;
+}
+
+.itin-track-line {
+  width: 50px;
+  height: 1.5px;
+  background-color: var(--color-border);
+}
+
+/* Meta Grid (3 items) */
+.ticket-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  padding-top: var(--space-1);
+}
+
+.meta-val {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+/* ── Perforation Tear-off Divider ── */
+.ticket-perforation-divider {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-paper-card);
+}
+
+.ticket-sidebar .ticket-perforation-divider {
+  height: 24px;
+  width: 100%;
+  flex-direction: row;
+}
+
+.perforated-notch {
+  width: 26px;
+  height: 26px;
+  background-color: var(--color-paper);
+  border: 1.5px solid var(--color-border-dark, var(--color-ink));
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+}
+
+.notch-top {
+  top: -14px;
+}
+
+.notch-bottom {
+  bottom: -14px;
+}
+
+.ticket-sidebar .notch-top {
+  left: -14px;
+  top: 0;
+}
+
+.ticket-sidebar .notch-bottom {
+  right: -14px;
+  bottom: 0;
+}
+
+.perforated-line {
+  height: 100%;
+  border-left: 2px dashed var(--color-border);
+  margin: 14px 0;
+}
+
+.ticket-sidebar .perforated-line {
+  width: 100%;
+  height: 0;
+  border-left: none;
+  border-bottom: 2px dashed var(--color-border);
+  margin: 0 14px;
+}
+
+/* ── Stub Section (Right) ── */
+.ticket-stub-section {
+  padding: var(--space-5) var(--space-4) var(--space-4);
+  background-color: var(--color-paper-card);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  border-left: 1px solid var(--color-border-subtle);
+}
+
+.stub-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.stub-label {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color-ink-light);
+}
+
+.stub-ref {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.stub-pricing-table {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-size: 11px;
+}
+
+.stub-price-row {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-ink-muted);
+}
+
+.stub-price-row .stub-val {
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
+.stub-total-card {
+  padding: var(--space-3);
+  background-color: var(--color-paper);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xs);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stub-total-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9.5px;
+  color: var(--color-ink-light);
+  letter-spacing: 0.08em;
+}
+
+.stub-total-amount {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1.1;
+}
+
+/* Barcode */
+.stub-barcode-slot {
+  margin-top: auto;
+  padding-top: var(--space-2);
+}
+
+.boarding-barcode-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-ink);
+}
+
+.barcode-caption {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: var(--color-ink-light);
+  margin-top: 2px;
+}
+
+/* Action buttons */
+.stub-actions {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.stub-btn-action {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xs);
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--color-ink);
+  background: var(--color-paper);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.stub-btn-action:hover {
+  background-color: var(--color-sand);
+}
+
+.stub-btn-action.print-btn {
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+  border-color: var(--color-accent);
+}
+
+.stub-btn-action.print-btn:hover {
+  background-color: var(--color-accent-hover);
+}
+
+.stub-btn-cancel {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--color-error);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-error);
+  border-radius: var(--radius-xs);
+  background: transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.stub-btn-cancel:hover {
+  background-color: var(--color-error-bg);
+}
+
+/* ── Footer Strip ── */
+.ticket-footer-strip {
+  padding: var(--space-2) var(--space-5);
+  background-color: var(--color-sand-light);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  font-size: 8.5px;
+  letter-spacing: 0.08em;
+  color: var(--color-ink-light);
+}
+
+.print-only-stamp {
+  display: none;
+}
+
+/* Responsive (Mobile screens) */
+@media (max-width: 768px) {
+  .ticket-inner-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ticket-perforation-divider {
+    height: 24px;
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .notch-top {
+    left: -14px;
+    top: 0;
+  }
+
+  .notch-bottom {
+    right: -14px;
+    bottom: 0;
+  }
+
+  .perforated-line {
+    width: 100%;
+    height: 0;
+    border-left: none;
+    border-bottom: 2px dashed var(--color-border);
+    margin: 0 14px;
+  }
+
+  .ticket-meta-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   STRICT ONE-PAGE PRINT STYLESHEET
+   Guarantees the Boarding Pass fits completely on 1 single page!
+   ============================================================ */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm;
+  }
+
+  html, body {
+    background-color: #FFFFFF !important;
+    color: #16130F !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 13px !important;
+  }
+
+  /* Completely suppress all surrounding chrome in print */
+  .site-header,
+  .confirmation-header,
+  .conf-badge,
+  .conf-title,
+  .conf-subtitle,
+  .confirmation-footer,
+  .no-print,
+  .editorial-toast {
+    display: none !important;
+  }
+
+  .confirmation-container {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .confirmation-pass-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Boarding Pass Container in Print */
+  .ticket-pass,
+  .ticket-boarding-pass {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    page-break-after: avoid !important;
+    box-shadow: none !important;
+    border: 1.5px solid #16130F !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    background: #FFFFFF !important;
+  }
+
+  .ticket-inner-grid {
+    grid-template-columns: 1fr 28px 260px !important;
+    background: #FFFFFF !important;
+  }
+
+  .ticket-header-strip {
+    background: #F4EFEB !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .stub-total-card,
+  .ticket-itinerary-box {
+    background: #F9F7F4 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .print-only-stamp {
+    display: block !important;
+    font-weight: 600 !important;
+    color: #16130F !important;
+  }
+}

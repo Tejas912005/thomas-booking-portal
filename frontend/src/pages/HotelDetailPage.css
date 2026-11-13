@@ -1,0 +1,327 @@
+.hotel-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-6) var(--space-20);
+}
+
+.detail-nav {
+  margin-bottom: var(--space-6);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-ink-muted);
+  transition: color var(--transition-fast);
+}
+
+.back-link:hover {
+  color: var(--color-accent);
+}
+
+.detail-header {
+  margin-bottom: var(--space-8);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-6);
+}
+
+.detail-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2);
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.detail-city-badge {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--color-accent);
+}
+
+.detail-inventory-badge {
+  font-size: 11px;
+  color: var(--color-ink-light);
+}
+
+.last-room-warning {
+  color: var(--color-error);
+  font-weight: 600;
+  background-color: var(--color-error-bg);
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+}
+
+.detail-title {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+/* Asymmetric 60/40 grid */
+.detail-layout {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: var(--space-12);
+  align-items: start;
+}
+
+/* Left Column */
+.detail-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.detail-visual-wrapper {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-subtle);
+}
+
+.story-heading {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-3);
+}
+
+.story-paragraph {
+  font-size: var(--text-md);
+  color: var(--color-ink-muted);
+  line-height: 1.7;
+}
+
+.section-subtitle {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--color-ink-light);
+  margin-bottom: var(--space-3);
+  display: block;
+}
+
+.amenities-tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  list-style: none;
+}
+
+.amenity-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-paper-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xs);
+  font-size: var(--text-xs);
+  color: var(--color-ink);
+}
+
+/* Per-night timeline */
+.inventory-timeline {
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+  padding-bottom: var(--space-2);
+}
+
+.timeline-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-paper-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xs);
+  min-width: 72px;
+}
+
+.timeline-slot.scarce {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent-subtle);
+}
+
+.timeline-slot.sold-out {
+  border-color: var(--color-error);
+  background-color: var(--color-error-bg);
+  opacity: 0.7;
+}
+
+.slot-date {
+  font-size: 10px;
+  color: var(--color-ink-light);
+}
+
+.slot-count {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-top: 2px;
+}
+
+/* Right Column: Sticky Ticket Sidebar */
+.detail-right {
+  position: sticky;
+  top: 90px;
+}
+
+.sticky-ticket-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.detail-calendar-block {
+  background-color: var(--color-paper-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-4);
+}
+
+.cal-block-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: var(--color-ink-muted);
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.nights-caption {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.detail-booking-cta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.full-width-btn {
+  width: 100%;
+}
+
+.cta-disclaimer {
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--color-ink-light);
+  text-align: center;
+}
+
+/* Alternative Dates Recommendations */
+.nearest-dates-card {
+  background-color: var(--color-accent-subtle);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  padding: var(--space-4);
+}
+
+.nd-header {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.nd-icon {
+  font-size: 18px;
+}
+
+.nd-title {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.nd-subtitle {
+  font-size: var(--text-xs);
+  color: var(--color-ink-muted);
+  margin-top: 2px;
+}
+
+.nd-stubs-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.nd-ticket-stub {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-paper);
+  border: 1px dashed var(--color-accent);
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: left;
+}
+
+.nd-ticket-stub:hover {
+  background-color: var(--color-accent);
+  color: #FFFFFF;
+}
+
+.nd-ticket-stub:hover .stub-dates,
+.nd-ticket-stub:hover .stub-price,
+.nd-ticket-stub:hover .stub-tag,
+.nd-ticket-stub:hover .stub-select-hint {
+  color: #FFFFFF;
+}
+
+.stub-dates {
+  display: flex;
+  flex-direction: column;
+}
+
+.stub-range {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.stub-tag {
+  font-size: 10px;
+  color: var(--color-ink-light);
+}
+
+.stub-price {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-accent);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.stub-select-hint {
+  font-size: 9px;
+  letter-spacing: 0.05em;
+  color: var(--color-ink-light);
+}
+
+.nd-no-alternatives {
+  font-size: 11px;
+  color: var(--color-ink-muted);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .detail-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .detail-right {
+    position: static;
+  }
+}
+
