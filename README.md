@@ -4,6 +4,16 @@
 
 ---
 
+## Video Walkthrough & Demo
+
+A comprehensive end-to-end screen recording demonstrating the search console, Airbnb-style dual-month calendar, hotel detail view, booking flow, and instant multi-channel boarding pass dispatch:
+
+🎥 **[Watch Full Walkthrough Video (MP4)](docs/demo.mp4)**
+
+*(File located in repository at `docs/demo.mp4`)*
+
+---
+
 ## Tech Stack
 
 | Layer | Technology |
